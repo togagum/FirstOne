@@ -21,19 +21,18 @@ void enqueue(Queue* q, unsigned int newValue)
 }
 int dequeue(Queue* q) // return element in top of queue, or -1 if empty
 {
-	int topE = q->_elements[0];
+	int topE = q->_elements[0]; //save top element
 	if (q->_count > 0)
 	{
 		for (int i = 0; i < q->_maxSize - 1; i++)
 		{
-			q->_elements[i] = q->_elements[i + 1];
+			q->_elements[i] = q->_elements[i + 1]; //move each var to it's place after the change
 		}
 		q->_count--;
 		return topE;
 	}
 	return -1;
 }
-
 bool isEmpty(Queue* s)
 {
 	return s->_count == 0;
@@ -41,18 +40,4 @@ bool isEmpty(Queue* s)
 bool isFull(Queue* s)
 {
 	return s->_count == s->_maxSize;
-}
-
-void printQrqbruh(Queue* q)
-{
-	for (int i = 0; i < q->_count; i++)
-	{
-		printf("%d, ", q->_elements[i]);
-	}
-	printf("\n");
-}
-
-void printnumrqbruh(int num)
-{
-	printf("\n%d\n", num);
 }
