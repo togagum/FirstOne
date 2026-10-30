@@ -6,6 +6,7 @@
 int main()
 {
     std::cout << "YEAAAAAAAAAAAAAAAaa\n";
+    std::cout << "VS 2026 is just bunch of shit (the main being copilot) together man\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
