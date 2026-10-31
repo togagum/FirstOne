@@ -19,9 +19,5 @@ int* reverse10()
 	{
 		std::cin >> arr[i];
 	}
-	for (int i = 0; i < ARRSIZE; i++)
-	{
-		printf("%d, ", arr[i]);
-	}
 	return arr;
 }
