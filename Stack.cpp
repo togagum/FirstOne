@@ -1,6 +1,11 @@
 #include <iostream>
 #include "Stack.h"
 
+/*
+initializes a stack
+input: pointer to stack
+output: none (initializes the stack)
+*/
 void initStack(Stack* s)
 {
 	Node* head = new Node;
@@ -9,6 +14,11 @@ void initStack(Stack* s)
 	s->isClean = true;
 }
 
+/*
+pushes a num to a stack
+input: pointer to stack, number to push
+output: none (pushes the number into the stack)
+*/
 void push(Stack* s, unsigned int element)
 {
 	if (s->isClean)
@@ -22,6 +32,11 @@ void push(Stack* s, unsigned int element)
 	initNode(pushedNode, element);
 }
 
+/*
+removes ("pops") the last num from the stack
+input: stack pointer
+output: the poped num (-1 if stack is empty) 
+*/
 int pop(Stack* s) // Return -1 if stack is empty
 {
 	if (s->isClean)
@@ -47,17 +62,31 @@ int pop(Stack* s) // Return -1 if stack is empty
 	return poppedElement;
 }
 
+/*
+cleans a stack, cleans the volume to raw and formats it to NTFS
+input: stack pointer
+output: none
+*/
 void cleanStack(Stack* s)
 {
 	cleanList(s->headNode);
 	s->isClean = true;
 	s->headNode->nextNode = nullptr;
 }
-
+/*
+checks if stack empty
+input: stack pointer
+output: if stack is empty
+*/
 bool isEmpty(Stack* s)
 {
 	return s->isClean;
 }
+/*
+checks if stack full
+input: stack pointer
+output: true (it CAN'T be full bruh)
+*/
 bool isFull(Stack* s)
 {
 	return false;

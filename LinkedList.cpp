@@ -1,12 +1,22 @@
 #include "LinkedList.h"
 #include <iostream>
 
+/*
+initialize a node
+input: node location pointer, node's initialized stored value
+output: none (affects node itself)
+*/
 void initNode(Node* n, unsigned int value)
 {
 	n->value = value;
 	n->nextNode = nullptr;
 }
 
+/*
+returns a pointer to the last node in a list of nodes
+input: list's head
+output: list's last node
+*/
 Node* getLastNode(Node *n)
 {
 	Node* prevN = n;
@@ -24,6 +34,11 @@ Node* getLastNode(Node *n)
 	return prevN;
 }
 
+/*
+returns a pointer to the node before the last node in a list of nodes
+input: list's head
+output: list's node before last node
+*/
 Node* getNodeBeforeLast(Node* n)
 {
 	Node* BefLastN = n;
@@ -47,6 +62,11 @@ Node* getNodeBeforeLast(Node* n)
 	return BefLastN;
 }
 
+/*
+prints a list
+input: list's head node
+output: none (prints if printf commands uncommented)
+*/
 void printList(Node *n)
 {
 	Node* currN = n;
@@ -58,6 +78,11 @@ void printList(Node *n)
 	}
 }
 
+/*
+cleans a list by removing reach node after the head node
+input: list's head node
+output: none (deletes nodes)
+*/
 void cleanList(Node* n)
 {
 	Node* curr = n->nextNode;
